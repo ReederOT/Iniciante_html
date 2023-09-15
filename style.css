@@ -48,10 +48,11 @@ body * {
 /*Links - lista*/
 
 ul {
-  display: flex;
   list-style: none;
+  display: flex;
   flex-direction: column;
   gap: 16px;
+  padding: 24px 0;
 }
 
 ul li a {
@@ -77,4 +78,35 @@ ul li a {
 ul li a:hover {
   background: rgba(255, 255, 255, 0.05);
   border: 1.5px solid white;
+}
+
+/*Social links*/
+
+#social-link{
+  display: flex;
+  justify-content: center;
+  padding: 24px 0;
+  font-size: 24px;
+  
+}
+
+#social-link a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  border-radius: 50%;
+  transition: background 0.2s;
+}
+
+#social-link a:hover {
+background: rgba(255, 255, 255, 0.2);
+padding: 16px;
+
+}
+
+footer {
+  padding: 24px 0;
+  text-align: center;
+  font-size: 16px;
 }
