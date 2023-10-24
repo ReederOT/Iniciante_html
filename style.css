@@ -4,22 +4,30 @@
   box-sizing: border-box;
 }
 
+:root {
+  --text-color: white;
+  --br-url: url(./assets/bg-mobile.jpg);
+  --stroke-color: rgba(255, 255, 255, 0.05);
+  --surface-color: rgba(255, 255, 255, 1);
+  --surface-color-hover: rgba(255, 255, 255, 0.5);
+  --hightight-color: rgba(255, 255, 255, 0.2);
+}
+
+.light {
+  --text-color: black;
+  --br-url: url(./assets/bg-mobile-light.jpg);
+  --stroke-color: rgba(0, 0, 0, 0.05);
+  --surface-color: rgba(0, 0, 0, 1);
+  --surface-color-hover: rgba(0, 0, 0, 0.2);
+  --hightight-color: rgba(0, 0, 0, 0.1);
+}
 body {
-  /*
-  background-image: url(./assets/bg-mobile.jpg);
-  background-repeat: no-repeat;
-  background-position: top center;
-  background-size: cover;
-  */
-
-  /* background cor imagem repeat position/size */
-
-  background: url(./assets/bg-mobile.jpg) no-repeat top center/cover;
+  background: var(--br-url) no-repeat top center/cover;
 }
 
 body * {
   font-family: "Inter", sans-serif;
-  color: #ffffff;
+  color: var(--text-color);
 }
 
 #container {
@@ -57,37 +65,38 @@ ul {
 
 ul li a {
   display: flex;
-  border: 1px solid red;
   align-items: center;
   justify-content: center;
+
   padding: 16px 24px;
 
-  background: rgba(255, 255, 255, 0.1);
-  border: rgba(255, 255, 255, 0.5);
+  background: var(--stroke-color);
+  border: 1px solid var(--surface-color);
   border-radius: 8px;
 
+  backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
 
   text-decoration: none;
   font-weight: 500;
+
   transition: background 0.2s;
 }
 
 /*pseudo-selector*/
 
 ul li a:hover {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1.5px solid white;
+  background-color: var(--surface-color-hover);
+  border: 1px solid var(--text-color);
 }
 
 /*Social links*/
 
-#social-link{
+#social-link {
   display: flex;
   justify-content: center;
   padding: 24px 0;
   font-size: 24px;
-  
 }
 
 #social-link a {
@@ -100,9 +109,8 @@ ul li a:hover {
 }
 
 #social-link a:hover {
-background: rgba(255, 255, 255, 0.2);
-padding: 16px;
-
+  background: var(--hightight-color);
+  padding: 16px;
 }
 
 footer {
